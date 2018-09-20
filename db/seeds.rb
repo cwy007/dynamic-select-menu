@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Country.all.delete_all if Country.all.present?
+20.times do |i|
+  Country.create(
+    name: "country name #{i}"
+  )
+end
+puts "create 20 countries!"
+
+State.all.delete_all if State.all.present?
+Country.all.each do |country|
+  20.times do |i|
+    State.create(
+      country: country,
+      name: "state name #{i} of #{country.name}"
+    )
+  end
+end
+puts "create 20 states!"
