@@ -1,4 +1,4 @@
 class Country < ApplicationRecord
-  has_many :state
-  has_many :people
+  has_many :states, dependent: :destroy
+  has_many :people, dependent: :nullify
 end

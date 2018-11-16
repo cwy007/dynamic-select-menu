@@ -11,6 +11,7 @@ Country.all.delete_all if Country.all.present?
   Country.create(
     name: "country name #{i}"
   )
+  print "*"
 end
 puts "create 20 countries!"
 
@@ -21,6 +22,7 @@ Country.all.each do |country|
       country: country,
       name: "state name #{i} of #{country.name}"
     )
+    print "*"
   end
 end
-puts "create 20 states!"
+puts "create 20 states for each country!"

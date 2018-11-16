@@ -13,7 +13,16 @@
 
   <div class="field">
     <%= f.label :state_id, "State or Province" %><br>
-    <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true %>
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
+
+<!-- <select class="person_state_id" name="person[state_id]"> state_id
+  <option value=""></option>                             include_blank: true
+  <optgroup label="country_name">                        Country.order(:name), name
+    <option value="state_id">state_name</option>         state, id, name
+    <option value=""></option>
+    <option value=""></option>
+  </optgroup>
+</select> -->
